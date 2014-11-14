@@ -16,6 +16,9 @@
 <body>
     <form id="form1" runat="server">
     <div>
+        <asp:SiteMapDataSource ID="uxSiteMap" StartingNodeUrl="~/Default.aspx" ShowStartingNode="false" runat="server" />
+        <asp:Menu DataSourceID="uxSiteMap" runat="server" />
+        <asp:SiteMapPath DataSourceID="uxSiteMap" PathSeparator=" | " runat="server" />
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
         </asp:ContentPlaceHolder>
     </div>
