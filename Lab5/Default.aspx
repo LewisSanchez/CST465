@@ -5,5 +5,5 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Stylesheets" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1>Default</h1>
+    <h1>Defaults</h1>
 </asp:Content>
