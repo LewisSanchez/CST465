@@ -39,13 +39,13 @@
     </asp:LoginView>
     <br />
 
-    <asp:SqlDataSource ID="DataSource" ConnectionString="Server=aura.students.cset.oit.edu;database=LewisSanchez;user id=LewisSanchez; password=LewisSanchez;" SelectCommand="SELECT UserName, Title, Body FROM dbo.aspnet_Users JOIN Announcement ON dbo.aspnet_Users.UserID = Announcement.UserID;" runat="server"></asp:SqlDataSource>
+    <asp:SqlDataSource ID="DataSource" ConnectionString="Server=aura.students.cset.oit.edu;database=LewisSanchez;user id=LewisSanchez; password=LewisSanchez;" SelectCommand="SELECT AnnouncementID, UserName, Title, Body FROM dbo.aspnet_Users JOIN Announcement ON dbo.aspnet_Users.UserID = Announcement.UserID;" runat="server"></asp:SqlDataSource>
     
     <asp:Repeater DataSourceID="DataSource" ID="uxRepeater" runat="server">
         <ItemTemplate>
             <%# Eval("UserName")  %>
             <br />
-           <strong>Title: </strong> <asp:Button Text='<%# Eval("Title")  %>' ID="uxTitleLink" OnClick="uxTitleLink_Click" runat="server" />
+           <strong>Title: </strong> <asp:HyperLink Text='<%# Eval("Title")  %>' ID="uxTitleLink" NavigateUrl='<%# "~/Announcement.aspx?ID=" + Eval("AnnouncementID") %>' runat="server" />
             <br />
            <strong>Body: </strong> <%# Eval("Body")  %>
             <br />

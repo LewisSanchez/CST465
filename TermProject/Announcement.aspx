@@ -19,17 +19,22 @@
             <br />
 
             <%# Eval("Body") %>
-            <br /><br />
+            <br />
+            <br />
         </ItemTemplate>
     </asp:FormView>
 
     <asp:GridView ID="CommentGridView" runat="server" />
 
-    <asp:Label AssociatedControlID="uxComment" Text="Comment: " runat="server" />
-    <asp:TextBox ID="uxComment" TextMode="MultiLine" runat="server" />
-    <asp:RequiredFieldValidator ControlToValidate="uxComment" Text="*" ErrorMessage="Comment required" runat="server" />
+    <asp:LoginView ID="uxCommentLoginView" runat="server">
+        <AnonymousTemplate>You must be logged in to post a comment...</AnonymousTemplate>
 
-    <asp:Button ID="uxSubmitComment" Text="Submit Comment" BackColor="DarkGray" OnClick="uxSubmitComment_Click" runat="server" />
+        <LoggedInTemplate>
+            <asp:Label AssociatedControlID="uxComment" Text="Comment: " runat="server" />
+            <asp:TextBox ID="uxComment" TextMode="MultiLine" runat="server" />
 
+            <asp:Button ID="uxSubmitComment" Text="Submit Comment" BackColor="DarkGray" OnClick="uxSubmitComment_Click" runat="server" />
+        </LoggedInTemplate>
+    </asp:LoginView>
 
 </asp:Content>

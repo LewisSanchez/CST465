@@ -49,21 +49,12 @@ namespace TermProject {
         protected global::System.Web.UI.WebControls.GridView CommentGridView;
         
         /// <summary>
-        /// uxComment control.
+        /// uxCommentLoginView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox uxComment;
-        
-        /// <summary>
-        /// uxSubmitComment control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button uxSubmitComment;
+        protected global::System.Web.UI.WebControls.LoginView uxCommentLoginView;
     }
 }

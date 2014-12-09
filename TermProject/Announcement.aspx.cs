@@ -34,7 +34,7 @@ namespace TermProject
                 command.CommandType = System.Data.CommandType.Text;
                 command.Parameters.AddWithValue("@AnnouncementID", Request.QueryString[0].ToString());
                 command.Parameters.AddWithValue("@UserID", Membership.GetUser().ProviderUserKey.ToString());
-                command.Parameters.AddWithValue("@CommentDescription", uxComment.Text);
+                command.Parameters.AddWithValue("@CommentDescription", ((TextBox)uxCommentLoginView.FindControl("uxComment")).Text);
                 connection.Open();
 
                 SqlDataReader reader = command.ExecuteReader();
@@ -49,7 +49,7 @@ namespace TermProject
                     reader.Close();
                 }
             }
-            Response.Redirect("Announcement.aspx?Title=" + Request.QueryString[0].ToString());
+            Response.Redirect("Announcement.aspx?ID=" + Request.QueryString[0].ToString());
         }
     }
 }

@@ -46,32 +46,5 @@ namespace TermProject
             }
             Response.Redirect("Announcements.aspx");
         }
-
-        protected void uxTitleLink_Click(object sender, EventArgs e)
-        {
-            string announcementID = " ";
-            string queryString = "SELECT AnnouncementID, Title FROM Announcement WHERE Title ='" + ((Button)sender).Text + "';";
-
-            using (SqlConnection connection = new SqlConnection("Server=aura.students.cset.oit.edu;database=LewisSanchez;user id=LewisSanchez; password=LewisSanchez;"))
-            {
-                SqlCommand command = new SqlCommand(queryString, connection);
-                command.CommandType = System.Data.CommandType.Text;
-                connection.Open();
-
-                SqlDataReader reader = command.ExecuteReader();
-                try
-                {
-                    while (reader.Read())
-                    {
-                        announcementID = reader[0].ToString();
-                    }
-                }
-                finally
-                {
-                    reader.Close();
-                }
-            }
-            Response.Redirect("Announcement.aspx?Title=" + announcementID);
-        }
     }
 }
