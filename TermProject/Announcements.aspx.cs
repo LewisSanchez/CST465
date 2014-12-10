@@ -44,7 +44,7 @@ namespace TermProject
                     reader.Close();
                 }
             }
-            Response.Redirect("Announcements.aspx");
+            uxRepeater.DataBind();
         }
     }
 }
