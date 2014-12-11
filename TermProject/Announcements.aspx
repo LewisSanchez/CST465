@@ -12,7 +12,7 @@
 <asp:Content ID="Content3" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1>Announcements</h1>
 
-    <asp:Label ID="uxNewAnnouncement" Text="Add New Announcement" runat="server" />
+    <asp:Label ID="uxNewAnnouncement" Text="Click here to Add New Announcement" runat="server" />
 
 
     <asp:UpdatePanel ID="uxUpdatePanel" UpdateMode="Conditional" runat="server">
